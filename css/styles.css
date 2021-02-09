@@ -4,8 +4,74 @@
 /* and above unless overwritten below */
 
 body {
-  background: #fcc;
-} 
+  background: #a2c2d2;
+  margin: 0;
+  font-family: Times;
+}
+h1{
+  display: flex;
+  justify-content: center;
+  color: #ff7749;
+  font-size: 3.5em;
+  font-weight: bold;
+}
+h2{
+  color: #5e647e;
+  font-weight: bolder;
+  margin-left: 30px;
+  font-size: 1.7em;
+  font
+}
+nav {
+  margin-top: 10px;
+  display: flex;
+  background-color: #FBFBFB;
+  justify-content: center;
+  border-top: 1px solid #5e647e;
+  border-bottom: 1px solid #5e647e;
+}
+nav a {
+  margin-right: 1em;
+  margin-left: 1em;
+  text-decoration: none;
+  color: #694b83;
+  font-size: 1.5em;
+  font-weight: 100;
+  transition: color 0.4s;
+}
+nav a:hover {
+  color: black;
+  text-decoration: underline;
+}
+main {
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  float: none;
+  border-top: 1px solid #5e647e;
+  border-bottom: 1px solid #5e647e;
+  margin-top: 50px;
+}
+main p {
+  margin-top: 2em;
+  font-size: 1.1em;
+}
+p {
+  color: #ff7749;
+  line-height: 1.5em;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 0 20px 0;
+  width: 50%;
+}
+footer {
+  padding: 20px 0 35px 0;
+}
 
 
 
@@ -14,10 +80,10 @@ body {
 @media screen and (min-width: 500px) {
 
   /* applies to screens wider than 499px */
-  
+
   body {
     background: #cfc;
-  } 
+  }
 }
 
 
@@ -29,6 +95,6 @@ body {
   /* applies to screens wider than 999px */
 
   body {
-    background: #ccf;
-  } 
+    background: #dbeff9;
+  }
 }
