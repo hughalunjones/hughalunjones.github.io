@@ -6,7 +6,7 @@
 body {
   background: #a2c2d2;
   margin: 0;
-  font-family: Times;
+  font-family: 'Times New Roman', Times, serif;
 }
 h1{
   display: flex;
@@ -46,7 +46,7 @@ nav a:hover {
 main {
   padding-left: 20px;
   padding-right: 20px;
-  max-width: 1000px;
+  max-width: 75%;
   margin-right: auto;
   margin-left: auto;
   float: none;
@@ -67,7 +67,11 @@ img {
   margin-left: auto;
   margin-right: auto;
   padding: 20px 0 20px 0;
-  width: 50%;
+  width: 100%;
+}
+section {
+  display: flex;
+  flex-direction: column;
 }
 footer {
   padding: 20px 0 35px 0;
@@ -96,5 +100,12 @@ footer {
 
   body {
     background: #dbeff9;
+  }
+  section {
+    flex-direction: row;
+  }
+  img {
+    flex-basis: 30%;
+    width: 30%;
   }
 }
