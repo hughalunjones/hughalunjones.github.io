@@ -6,6 +6,7 @@
 body {
   background: #2E8BC0;
   margin: 0;
+  padding-bottom:60px;
   font-family: 'Benne', serif;
   z-index: 0;
 }
@@ -89,20 +90,23 @@ header h2 {
 #menuToggler.open + header nav {
   transform: translate(0);
 }
-img.top-banner {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  filter: grayscale(90%);
-}
 nav a:hover {
   color: #694b83;
+}
+section.img-banner {
+  margin: 1em 0 1em 0;
+  padding: 1em 0 1em 0;
+  background: url(https://placekitten.com/300/200);
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(90%);
 }
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 15px 0 15px;
+  padding: 15px;
   max-width: 75%;
   float: none;
   margin: 1em auto 1.5em auto;
@@ -112,12 +116,14 @@ main p {
   font-size: 1.1em;
   color: white;
 }
-section p.quote {
-  margin: 0.75em;
-  padding: 0.4em 0 0.4em 0;
-  border-top: 1px solid #5e647e;
-  border-bottom: 1px solid #5e647e;
+p.quote {
+  margin: 1em;
+  padding: 1em 0 1em 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   text-align: center;
+  line-height: normal;
+  color: white;
 }
 section img {
   margin: 0;
@@ -151,9 +157,11 @@ div.container {
 }
 
 footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
   display: flex;
   justify-content: center;
-  padding: 10px 0 10px 0;
   background-color: #B1D4E0;
 }
 footer p {
@@ -199,7 +207,15 @@ section.socialIcons p a {
     transform: translateY(-0.575em) rotate(-45deg);
   }
   header img {
-    background-image: url(https://placekitten.com/700/300);
+    background-image: url(https://placekitten.com/500/250);
+  }
+  section.img-banner {
+    display: flex;
+    justify-content: center;
+  }
+  p.quote {
+    font-size: 1.2em;
+    width: 60%;
   }
 }
 
@@ -209,27 +225,25 @@ section.socialIcons p a {
   #menuToggler {
     display: none;
   }
-  section.title-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  header {
+    display: grid;
+    grid-row-gap: 0.25em;
+    grid-column-gap: 1em;
+    grid-template-columns: 2fr 2fr;
   }
   section.full-title {
     display: flex;
     flex-direction: column;
   }
   section.title {
-    display: flex;
     margin: 0.5em 0.5em 0 0.5em;
     padding-left: 1em;
   }
   section.sub-title {
-    display: flex;
     margin: 0 0.5em 0.5em 0.5em;
     padding-left: 1.5em;
   }
   section.nav-bar {
-    display: flex;
     margin: 0.5em;
     padding: 3.75em 2em 0 0;
     align-items: baseline;
@@ -259,10 +273,15 @@ section.socialIcons p a {
   nav div {
     display: none;
   }
-  section.img-segment {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  section.img-banner {
+    grid-row-start: 2;
+    grid-column: 1 / 3;
+    align-self: center;
+    margin: 1em 2em 1em 2em;
+    background: url(https://placekitten.com/600/400);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60%;
   }
   header h1 {
     font-size: 3em;
@@ -293,8 +312,7 @@ section.socialIcons p a {
     padding-top: 2em;
     padding-left: 0;
   }
-  img.top-banner{
-    box-sizing: border-box;
-    margin: 0 4em 0 4em;
+  section.img-banner {
+    width: 75%;
   }
 }
