@@ -2,12 +2,21 @@
 
 /* applies to screens smaller than 500px (first breakpoint) */
 /* and above unless overwritten below */
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
 
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+#content-wrap {
+  padding-bottom: 60px;
+}
 body {
-  background: #2E8BC0;
+  background: #383e56;
   margin: 0;
   padding-bottom:60px;
-  font-family: 'Benne', serif;
+  font-family: 'DM Mono', monospace;
   z-index: 0;
 }
 #menuToggler{
@@ -20,12 +29,12 @@ body {
   flex-direction: column;
   justify-content: space-between;
   z-index: 20;
-  background-color: rgba(137, 207, 240, 0.85);
+  background-color: #9fb8ad;
   padding: 0.25em;
 }
 #menuToggler div {
   height: 20%;
-  background: #145DA0;
+  background: #383e56;
   transition: 0.3s;
 }
 #menuToggler.open div:nth-child(1){
@@ -49,7 +58,7 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(137,207,240, 0.85);
+  background-color: rgb(159,184,173, 0.85);
   transform: translateY(100vh);
   transition: 0.5s;
   z-index: 19;
@@ -58,7 +67,7 @@ nav a {
   margin: 1em 2em 1em 2em;
   text-decoration: none;
   justify-content: center;
-  color: #694b83;
+  color: #383e56;
   font-size: 1.4em;
   font-weight: bold;
   transition: color 0.4s;
@@ -67,19 +76,23 @@ nav div {
   height: 3px;
   width: 60%;
   margin: 0 auto 0 auto;
-  background: #145DA0;
+  background: #383e56;
 }
 nav.open {
   transform: translateY(0);
 }
+section.title {
+  display: flex;
+  flex-direction: column;
+}
 header h1, header h2 {
   color: white;
-  margin: 0 0 0 10px;
+  margin: 0 1px 0 10px;
   letter-spacing: 0.05em;
   z-index: 15;
 }
 header h1{
-  font-size: 2em;
+  font-size: 2.5em;
 }
 header h2 {
   line-height: 1em;
@@ -91,30 +104,33 @@ header h2 {
   transform: translate(0);
 }
 nav a:hover {
-  color: #694b83;
+  color: #fb743e;
 }
 section.img-banner {
   margin: 1em 0 1em 0;
   padding: 1em 0 1em 0;
   background: url(https://placekitten.com/300/200);
-  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   filter: grayscale(90%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 15px;
-  max-width: 75%;
+  max-width: 90%;
   float: none;
   margin: 1em auto 1.5em auto;
 }
 main p {
   margin: 2em 0 2em 0;
-  font-size: 1.1em;
+  font-size: 1em;
   color: white;
+}
+section.sous-img {
+  margin-bottom: 1em;
 }
 p.quote {
   margin: 1em;
@@ -125,6 +141,10 @@ p.quote {
   line-height: normal;
   color: white;
 }
+p.sous-quote {
+  text-align: center;
+  margin: 0.5em 0 0.5em 0;
+}
 section img {
   margin: 0;
   filter: grayscale(90%);
@@ -134,6 +154,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  height: 80%;
 }
 section.img-segment {
   display: flex;
@@ -148,21 +169,25 @@ section.polaroid {
 div.cardImg {
   margin: 0.4em 1em 0.4em 1em;
   width: 75%;
-  background-color: #B1D4E0;
+  background-color: #9fb8ad;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 div.container {
   text-align: center;
   padding: 10px 20px;
 }
-
-footer {
-  position: fixed;
-  width: 100%;
-  bottom: 0px;
+div.footer {
   display: flex;
   justify-content: center;
-  background-color: #B1D4E0;
+}
+footer {
+  position: absolute;
+  width: 75%;
+  bottom: 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  background-color: #9fb8ad;
 }
 footer p {
   margin: 0.5em;
@@ -172,22 +197,19 @@ section.socialIcons {
   flex-direction: row;
   align-items: center;
   font-size: 2.5em;
-  margin: 0;
+  margin: 0.5em;
 }
 section.socialIcons p {
   margin: 0.25em 0.5em 0.25em 0.5em;
 }
 section.socialIcons p a {
-  color: #145DA0;
+  color: #383e56;
   text-decoration: none;
 }
 
 /* TABLET STYLES */
 
 @media screen and (min-width: 500px) {
-  body {
-    background: #2E8BC0;
-  }
   #menuToggler{
     top: 1em;
     right: 1em;
@@ -209,6 +231,10 @@ section.socialIcons p a {
   header img {
     background-image: url(https://placekitten.com/500/250);
   }
+  section.title {
+    display: flex;
+    flex-direction: row;
+  }
   section.img-banner {
     display: flex;
     justify-content: center;
@@ -226,14 +252,9 @@ section.socialIcons p a {
     display: none;
   }
   header {
-    display: grid;
-    grid-row-gap: 0.25em;
-    grid-column-gap: 1em;
-    grid-template-columns: 2fr 2fr;
-  }
-  section.full-title {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
   }
   section.title {
     margin: 0.5em 0.5em 0 0.5em;
@@ -246,7 +267,6 @@ section.socialIcons p a {
   section.nav-bar {
     margin: 0.5em;
     padding: 3.75em 2em 0 0;
-    align-items: baseline;
   }
   nav {
     font-weight: 100;
@@ -274,14 +294,35 @@ section.socialIcons p a {
     display: none;
   }
   section.img-banner {
-    grid-row-start: 2;
-    grid-column: 1 / 3;
-    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 1em 2em 1em 2em;
-    background: url(https://placekitten.com/600/400);
+    height: 30em;
+    background: url(https://placekitten.com/1920/1080);
     background-repeat: no-repeat;
     background-position: center;
-    width: 60%;
+    background-size: cover;
+  }
+  p.quote {
+    height: 5em;
+  }
+  p.sous-quote {
+    text-align: center;
+    font-size: 1.75em;
+  }
+  section.img-segment {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    margin-top: 3em;
+    padding: 1.5em;
+    border-top: 1px solid #9fb8ad;
+    border-bottom: 1px solid #9fb8ad;
+  }
+  section.img-p {
+    align-self: center;
+    text-align: center;
+    font-size: 2.5em;
   }
   header h1 {
     font-size: 3em;
@@ -298,6 +339,12 @@ section.socialIcons p a {
 @media screen and (min-width: 1400px) {
   section.full-title {
     display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 1708px) {
+  section.full-title {
+    display: flex;
     flex-direction: row;
     justify-content: flex-start;
   }
@@ -311,8 +358,5 @@ section.socialIcons p a {
     margin: 1em;
     padding-top: 2em;
     padding-left: 0;
-  }
-  section.img-banner {
-    width: 75%;
   }
 }
