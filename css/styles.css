@@ -81,9 +81,13 @@ nav div {
 nav.open {
   transform: translateY(0);
 }
-section.title {
+div.title {
   display: flex;
   flex-direction: column;
+}
+a {
+  text-decoration: none;
+  color: white;
 }
 header h1, header h2 {
   color: white;
@@ -106,7 +110,9 @@ header h2 {
 nav a:hover {
   color: #fb743e;
 }
-section.img-banner {
+div.img-banner {
+  display: flex;
+  justify-content: center;
   margin: 1em 0 1em 0;
   padding: 1em 0 1em 0;
   background: url(https://placekitten.com/300/200);
@@ -122,7 +128,7 @@ main {
   padding: 15px;
   max-width: 90%;
   float: none;
-  margin: 1em auto 1.5em auto;
+  margin: 1em auto 5em auto;
 }
 main p {
   margin: 2em 0 2em 0;
@@ -130,10 +136,11 @@ main p {
   color: white;
 }
 section.sous-img {
-  margin-bottom: 1em;
+  margin: 2em 0 2em 0;
 }
 p.quote {
   margin: 1em;
+  width: 60%;
   padding: 1em 0 1em 0;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
@@ -145,32 +152,29 @@ p.sous-quote {
   text-align: center;
   margin: 0.5em 0 0.5em 0;
 }
+.img-segment {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #9fb8ad;
+  border-bottom: 1px solid #9fb8ad;
+}
+.slide-img {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 1em 0 1em 0;
+}
+.txt-overlay {
+  color: white;
+  background-color: #9fb8ad;
+}
+.slide-title {
+  text-decoration: underline;
+  margin-bottom: 1em;
+}
 section img {
   margin: 0;
   filter: grayscale(90%);
-}
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 80%;
-}
-section.img-segment {
-  display: flex;
-  flex-direction: column;
-}
-section.polaroid {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 0.5em;
-}
-div.cardImg {
-  margin: 0.4em 1em 0.4em 1em;
-  width: 75%;
-  background-color: #9fb8ad;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 div.container {
   text-align: center;
@@ -179,9 +183,10 @@ div.container {
 div.footer {
   display: flex;
   justify-content: center;
+  padding-top: 2em;
 }
 footer {
-  position: absolute;
+  align-self: center;
   width: 75%;
   bottom: 0;
   height: 50px;
@@ -192,17 +197,17 @@ footer {
 footer p {
   margin: 0.5em;
 }
-section.socialIcons {
+section.social-icons {
   display: flex;
   flex-direction: row;
   align-items: center;
   font-size: 2.5em;
   margin: 0.5em;
 }
-section.socialIcons p {
+section.social-icons p {
   margin: 0.25em 0.5em 0.25em 0.5em;
 }
-section.socialIcons p a {
+section.social-icons p a {
   color: #383e56;
   text-decoration: none;
 }
@@ -231,11 +236,11 @@ section.socialIcons p a {
   header img {
     background-image: url(https://placekitten.com/500/250);
   }
-  section.title {
+  div.title {
     display: flex;
     flex-direction: row;
   }
-  section.img-banner {
+  div.img-banner {
     display: flex;
     justify-content: center;
   }
@@ -256,11 +261,11 @@ section.socialIcons p a {
     flex-direction: row;
     justify-content: space-between;
   }
-  section.title {
+  div.title {
     margin: 0.5em 0.5em 0 0.5em;
     padding-left: 1em;
   }
-  section.sub-title {
+  div.sub-title {
     margin: 0 0.5em 0.5em 0.5em;
     padding-left: 1.5em;
   }
@@ -293,7 +298,7 @@ section.socialIcons p a {
   nav div {
     display: none;
   }
-  section.img-banner {
+  div.img-banner {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -304,20 +309,9 @@ section.socialIcons p a {
     background-position: center;
     background-size: cover;
   }
-  p.quote {
-    height: 5em;
-  }
   p.sous-quote {
     text-align: center;
     font-size: 1.75em;
-  }
-  section.img-segment {
-    display: grid;
-    grid-template-columns: 3fr 3fr;
-    margin-top: 3em;
-    padding: 1.5em;
-    border-top: 1px solid #9fb8ad;
-    border-bottom: 1px solid #9fb8ad;
   }
   section.img-p {
     align-self: center;
@@ -335,11 +329,82 @@ section.socialIcons p a {
   section p.quote {
     font-size: 1.5em;
   }
+  .img-segment {
+    margin: 2em;
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .slide-img {
+    margin: 1em;
+    align-self: center;
+    position: relative;
+    width: 33%;
+  }
+  .img-bg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .txt-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(159, 184, 173, 1);
+    overflow: hidden;
+    width: 100%;
+    height: 25%;
+    transition: .5s ease;
+  }
+  .slide-img:hover .txt-overlay {
+    height: 100%;
+    background-color: rgb(159, 184, 173, 0.65)
+  }
+  .slide-img:hover .slide-title {
+    text-decoration: underline;
+    font-size: 1em;
+    top: 10%;
+  }
+  .slide-img:hover .slide-desc {
+    padding-top: 30%;
+    transform: translate(0);
+  }
+  .slide-title {
+    white-space: nowrap;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .5s ease;
+  }
+  .slide-desc {
+    margin: 2em;
+    text-align: center;
+    align-self: center;
+    font-size: 0.9em;
+    color: white;
+    padding-top: 50%;
+    transform: translate(0, 100%);
+    transition: .5s ease;
+  }
+
 }
 @media screen and (min-width: 1400px) {
   section.full-title {
     display: flex;
     flex-direction: column;
+  }
+  .slide-img:hover .slide-title {
+    font-size: 1.5em;
+  }
+  .slide-desc {
+    font-size: 1.25em;
   }
 }
 @media screen and (min-width: 1708px) {
@@ -348,15 +413,24 @@ section.socialIcons p a {
     flex-direction: row;
     justify-content: flex-start;
   }
-  section.title {
+  div.title {
     display: flex;
     margin: 0.5em;
     padding-left: 1em;
   }
-  section.sub-title {
+  div.sub-title {
     display: flex;
     margin: 1em;
-    padding-top: 2em;
+    padding-top: 1.25em;
     padding-left: 0;
+  }
+  p.quote {
+    font-size: 2em;
+  }
+  .slide-img:hover .slide-title {
+    font-size: 2em;
+  }
+  .slide-desc {
+    font-size: 1.5em;
   }
 }
