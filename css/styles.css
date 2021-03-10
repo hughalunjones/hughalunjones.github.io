@@ -4,16 +4,11 @@
 /* and above unless overwritten below */
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
-
-#page-container {
-  position: relative;
-  min-height: 100vh;
-}
-#content-wrap {
-  padding-bottom: 60px;
+html {
+  scroll-behavior: smooth;
 }
 body {
-  background: #e08f62;
+  background: #f2edd7;
   margin: 0;
   padding-bottom: 60px;
   font-family: 'DM Mono', monospace;
@@ -21,30 +16,28 @@ body {
 }
 #menuToggler{
   position: fixed;
-  top: 0.5em;
-  right: 0.5em;
-  height: 1em;
-  width: 1em;
+  top: 1em;
+  right: 1.5em;
+  height: 1.5em;
+  width: 1.75em;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   z-index: 20;
-  background-color: #cc7351;
+  background-color: none;
   padding: 0.25em;
 }
 #menuToggler div {
-  height: 20%;
-  background: #FBF3EF;
-  transition: 0.3s;
+  height: 10%;
+  width: 110%;
+  background: #3a6351;
+  transition: 0.4s;
 }
 #menuToggler.open div:nth-child(1){
-  transform: translateY(0.4em) rotate(45deg);
+  transform: translateY(0.36em) rotate(180deg);
 }
 #menuToggler.open div:nth-child(2){
-  opacity: 0;
-}
-#menuToggler.open div:nth-child(3){
-  transform: translateY(-0.4em) rotate(-45deg);
+  transform: translateY(-0.36em) rotate(-180deg);
 }
 nav {
   font-weight: 100;
@@ -58,7 +51,7 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(224, 143, 98, 0.85);
+  background-color: rgb(242, 237, 215, 0.85);
   transform: translateY(100vh);
   transition: 0.5s;
   z-index: 19;
@@ -67,7 +60,7 @@ nav a {
   margin: 1em 2em 1em 2em;
   text-decoration: none;
   justify-content: center;
-  color: #FBF3EF;
+  color: #3a6351;
   font-size: 1.4em;
   font-weight: bold;
   transition: color 0.4s;
@@ -76,7 +69,7 @@ nav div {
   height: 3px;
   width: 60%;
   margin: 0 auto 0 auto;
-  background: #FBF3EF;
+  background: #3a6351;
 }
 nav.open {
   transform: translateY(0);
@@ -88,7 +81,7 @@ main {
   padding: 15px;
   max-width: 90%;
   float: none;
-  margin: 0 auto 5em auto;
+  margin: 0 auto 2em auto;
 }
 .title {
   display: flex;
@@ -101,12 +94,12 @@ h1 {
   margin: 0;
 }
 .sub-title {
-  color: white;
+  color: #3a6351;
   font-size: 0.75em;
   font-weight: normal;
 }
 h2 {
-  color: white;
+  color: #3a6351;
   margin: 0.25em 0 0 0;
   line-height: 1em;
   margin-bottom: 10px;
@@ -115,23 +108,20 @@ h2 {
 }
 a {
   text-decoration: none;
-  color: white;
+  color: #3a6351;
 }
 #menuToggler.open + header nav {
   transform: translate(0);
 }
 nav a:hover {
-  color: #fb743e;
+  color: #393232;
 }
 .img-banner {
-  display: flex;
-  justify-content: center;
-  left: 5vw;
-  right: 5vw;
   margin: 1em 0 1em 0;
   padding: 1em 0 1em 0;
   height: 300px;
   max-height: 310px;
+  max-width: 100%;
   background: url(https://placekitten.com/500/500);
   background-repeat: no-repeat;
   background-size: cover;
@@ -141,12 +131,12 @@ nav a:hover {
 main p {
   margin: 2em 0 2em 0;
   font-size: 1em;
-  color: white;
+  color: #3a6351;
 }
 .sous-img {
   margin-bottom: 1em;
   font-size: 20px;
-  color: #9fb8ad;
+  color: #3a6351;
 }
 .quote {
   margin: 1em;
@@ -156,43 +146,53 @@ main p {
   border-bottom: 1px solid white;
   text-align: center;
   line-height: normal;
-  color: white;
+  color: #3a6351;
 }
 .sous-quote {
   text-align: center;
-  color: white;
   margin: 0;
 }
 .img-segment {
   display: flex;
   flex-direction: column;
   padding: 1em 0 1em 0;
-  border-top: 1px solid #ded7b1;
-  border-bottom: 1px solid #ded7b1;
+  border-top: 1px solid #3a6351;
+  border-bottom: 1px solid #3a6351;
 }
-.slide-img {
-  display: flex;
-  max-width: 300px;
-  align-self: center;
-  flex-direction: column;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.project-segment{
   margin: 1em 0 1em 0;
+  background-color: #3a6351;
+  height: 400px;
 }
-.txt-overlay {
-  color: white;
-  background-color: #cc7351;
+h3 {
+  text-align: center;
+  color: #cee2d9;
+  margin: 0.25em 0 0 0;
+  line-height: 1em;
+  margin-bottom: 10px;
+  font-weight: lighter;
+  font-size: 1.5em;
 }
-.slide-title {
-  text-decoration: underline;
-  margin-bottom: 1em;
+.project-img{
+  filter: grayscale(90%);
+  background-image: url(https://placekitten.com/720/720);
+  background-size: cover;
+  margin: 1em;
+  height: 325px;
 }
 section img {
   margin: 0;
   filter: grayscale(90%);
 }
-div.container {
-  text-align: center;
-  padding: 10px 20px;
+.about-img {
+  margin: 0;
+  background-image: url(https://placekitten.com/720/720);
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+}
+.about-description {
+  margin: 0.5em;
 }
 div.footer {
   display: flex;
@@ -206,7 +206,7 @@ footer {
   height: 50px;
   display: flex;
   justify-content: center;
-  background-color: #cc7351;
+  background-color: #3a6351;
 }
 footer p {
   margin: 0.5em;
@@ -222,7 +222,7 @@ section.social-icons p {
   margin: 0.25em 0.5em 0.25em 0.5em;
 }
 section.social-icons p a {
-  color: white;
+  color: #cee2d9;
   text-decoration: none;
 }
 
@@ -232,20 +232,17 @@ section.social-icons p a {
   #menuToggler{
     top: 1em;
     right: 1em;
-    height: 1.5em;
-    width: 1.5em;
+    height: 1em;
+    width: 2em;
   }
   #menuToggler div {
-    height: 22%;
+    height: 15%;
   }
   #menuToggler.open div:nth-child(1){
-    transform: translateY(0.575em) rotate(45deg);
+    transform: translateY(0.25em) rotate(180deg);
   }
   #menuToggler.open div:nth-child(2){
-    opacity: 0;
-  }
-  #menuToggler.open div:nth-child(3){
-    transform: translateY(-0.575em) rotate(-45deg);
+    transform: translateY(-0.25em) rotate(-180deg);
   }
   header img {
     background-image: url(https://placekitten.com/500/250);
@@ -271,6 +268,15 @@ section.social-icons p a {
     font-size: 1.2em;
     width: 60%;
   }
+  .project-segment {
+    height: 500px;
+  }
+  h3 {
+    font-size: 2em;
+  }
+  .project-img {
+    height: 425px;
+  }
 }
 
 /* DESKTOP STYLES */
@@ -283,17 +289,21 @@ section.social-icons p a {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    z-index: 20;
   }
   .nav-border {
     height: 2px;
     width: 60%;
     margin: 0 auto 0 auto;
-    background: #FBF3EF;
+    background: #3a6351;
   }
-  div.title {
+  .hero-banner {
+    margin: 40px 40px 40px 40px;
+  }
+  .title {
     margin: 0.5em 0.5em 0 0.5em;
   }
-  div.sub-title {
+  .sub-title {
     margin: 0 0.5em 0.5em 0.5em;
   }
   section.nav-bar {
@@ -317,13 +327,16 @@ section.social-icons p a {
   nav a {
     margin: 0.5em;
     text-decoration: none;
-    color: white;
+    color: #3a6351;
     font-size: 1.4em;
     font-weight: lighter;
     transition: color 0.4s;
   }
   nav div {
     display: none;
+  }
+  .hero-banner {
+    margin: 40px 0 40px 0;
   }
   .img-banner {
     width: 600px;
@@ -365,68 +378,21 @@ section.social-icons p a {
   .img-segment {
     margin: 2em;
     padding: 2em;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
   }
-  .slide-img {
-    margin: 1em;
-    align-self: center;
-    position: relative;
-    width: 33%;
+  .project-segment {
+    height: 600px;
   }
-  .img-bg {
-    display: block;
-    width: 100%;
-    height: auto;
+  h3 {
+    font-size: 2.25em;
   }
-  .txt-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgb(204, 115, 81, 1);
-    overflow: hidden;
-    width: 100%;
-    height: 25%;
-    transition: .5s ease;
+  .project-img {
+    height: 525px;
+    transition: 0.4s;
   }
-  .slide-img:hover .txt-overlay {
-    height: 100%;
-    background-color: rgb(204, 115, 81, 0.65)
+  .project-img:hover {
+    transform: translateY(-0.36em);
+    opacity: 0.7;
   }
-  .slide-img:hover .slide-title {
-    text-decoration: underline;
-    font-size: 1em;
-    top: 10%;
-  }
-  .slide-img:hover .slide-desc {
-    padding-top: 30%;
-    transform: translate(0);
-  }
-  .slide-title {
-    white-space: nowrap;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    position: absolute;
-    overflow: hidden;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: .5s ease;
-  }
-  .slide-desc {
-    margin: 2em;
-    text-align: center;
-    align-self: center;
-    font-size: 0.9em;
-    color: white;
-    padding-top: 50%;
-    transform: translate(0, 100%);
-    transition: .5s ease;
-  }
-
 }
 @media screen and (min-width: 1400px) {
   section.full-title {
@@ -439,6 +405,19 @@ section.social-icons p a {
   .slide-desc {
     font-size: 1.25em;
   }
+  .nav-border {
+    margin-bottom: 2em;
+  }
+  h1 {
+    font-size: 6em;
+  }
+  h2 {
+    font-size: 3em;
+  }
+  .sous-quote {
+    font-size: 1.75em;
+    text-align: left;
+  }
 }
 @media screen and (min-width: 1708px) {
   section.full-title {
@@ -446,15 +425,13 @@ section.social-icons p a {
     flex-direction: row;
     justify-content: flex-start;
   }
-  div.title {
-    display: flex;
-    margin: 0.5em;
-    padding-left: 1em;
-  }
-  div.sub-title {
+  .title {
     display: flex;
     margin: 1em;
-    padding-top: 1.25em;
+  }
+  .sub-title {
+    display: flex;
+    margin: 1em;
     padding-left: 0;
   }
   p.quote {
