@@ -4,6 +4,54 @@
 /* and above unless overwritten below */
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
+
+/*Keyframe animations*/
+@keyframes slide-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -72,6 +120,13 @@ nav div {
 }
 nav.open {
   transform: translateY(0);
+}
+header h3 {
+  opacity: 0;
+}
+.img-segment h3{
+  opacity: 1;
+  color: white;
 }
 main {
   display: flex;
@@ -151,7 +206,7 @@ main p {
   text-align: center;
   margin: 0;
 }
-.img-segment {
+#img-segment {
   display: flex;
   flex-direction: column;
   padding: 1em 0 1em 0;
@@ -172,6 +227,9 @@ h3 {
   font-weight: lighter;
   font-size: 1.5em;
 }
+.h3-index {
+  opacity: 0;
+}
 .project-img{
   filter: grayscale(90%);
   background-image: url(https://placekitten.com/720/720);
@@ -185,14 +243,42 @@ section img {
 }
 .about-img {
   margin: 0;
-  background-image: url(https://placekitten.com/720/720);
-  background-size: cover;
   width: 100%;
   height: 300px;
+  object-fit: cover;
+  object-position: 100% 28%;
+  animation-name: fade-in;
+  animation-duration: 3s;
 }
 .about-description {
   width: 100%;
   margin: 0.5em;
+  animation-name: fade-in;
+  animation-duration: 3s;
+}
+.about-description h2 {
+  letter-spacing: -0.025em;
+  animation-name: slide-left;
+  animation-duration: 2s;
+}
+.contact-img {
+  background-image: url(https://placekitten.com/500/500);
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  filter: grayscale(90%);
+  margin-bottom: 2em;
+}
+.contact-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #3a6351;
+}
+.contact-info p {
+  color: white;
+  margin: 1em 0 1em 0;
+  text-align: left;
 }
 div.footer {
   display: flex;
@@ -246,6 +332,12 @@ section.social-icons p a {
   header img {
     background-image: url(https://placekitten.com/500/250);
   }
+  nav a {
+    font-size: 1.75em;
+  }
+  nav div {
+    width: 50%;
+  }
   .hero-banner {
     display: grid;
     grid-row-gap: 1.5em;
@@ -274,7 +366,7 @@ section.social-icons p a {
     font-size: 2em;
   }
   .project-img {
-    height: 425px;
+    height: 425px;<h3><a href="index.html">Hugh Alun-Jones</a></h3>
   }
   .about-img {
     height: 400px;
@@ -296,8 +388,16 @@ section.social-icons p a {
   header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     z-index: 20;
+    animation-name: slide-down;
+    animation-duration: 2s;
+  }
+  header h3 {
+    opacity: 1;
+    color: #3a6351;
+    font-size: 2em;
+    margin: 0.8em 1em 1em 1em;
   }
   .nav-border {
     height: 2px;
@@ -306,7 +406,7 @@ section.social-icons p a {
     background: #3a6351;
   }
   .hero-banner {
-    margin: 40px 40px 40px 40px;
+    margin: 40px 80px 40px 80px;
   }
   .title {
     margin: 0.5em 0.5em 0 0.5em;
@@ -319,7 +419,7 @@ section.social-icons p a {
   }
   nav {
     font-weight: 100;
-    font-size: 25px;
+    font-size: 20px;
     letter-spacing: 0.25em;
     display: flex;
     flex-direction: row;
@@ -342,9 +442,6 @@ section.social-icons p a {
   }
   nav div {
     display: none;
-  }
-  .hero-banner {
-    margin: 40px 0 40px 0;
   }
   .img-banner {
     width: 600px;
@@ -383,7 +480,7 @@ section.social-icons p a {
   section p.quote {
     font-size: 1.5em;
   }
-  .img-segment {
+  #img-segment {
     margin: 2em;
     padding: 2em;
   }
@@ -391,7 +488,9 @@ section.social-icons p a {
     height: 600px;
   }
   h3 {
+    color: white;
     font-size: 2.25em;
+    opacity: 1;
   }
   .project-img {
     height: 525px;
@@ -435,6 +534,9 @@ section.social-icons p a {
   .sous-quote {
     font-size: 1.75em;
     text-align: left;
+  }
+  .about-img {
+    height: 600px;
   }
 }
 @media screen and (min-width: 1708px) {
