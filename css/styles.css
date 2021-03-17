@@ -40,7 +40,7 @@
   from {
     opacity: 0;
   }
-  100% {
+  to {
     opacity: 1;
   }
 }
@@ -48,12 +48,43 @@
   from {
     opacity: 1;
   }
-  100% {
+  to {
     opacity: 0;
+  }
+}
+@keyframes load-in {
+  from {
+    opacity: 0;
+    transform: translateY(2em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 html {
   scroll-behavior: smooth;
+}
+#fader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  pointer-events: none;
+  background: #f2edd7;
+  opacity: 0;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+#fader.fade-out {
+  opacity: 0;
+  animation-name: fade-out;
+}
+#fader.fade-in {
+  opacity: 1;
+  animation-name: fade-in;
 }
 body {
   background: #f2edd7;
@@ -121,9 +152,6 @@ nav div {
 nav.open {
   transform: translateY(0);
 }
-header h3 {
-  opacity: 0;
-}
 .img-segment h3{
   opacity: 1;
   color: white;
@@ -142,6 +170,7 @@ main {
   flex-direction: column;
 }
 h1 {
+  color: #3a6351;
   font-size: 3.25em;
   font-weight: bolder;
   letter-spacing: 1px;
@@ -217,15 +246,31 @@ main p {
   margin: 1em 0 1em 0;
   background-color: #3a6351;
   height: 400px;
+  align-items: center;
 }
-h3 {
+.project-title {
+  color: white;
   text-align: center;
+  margin: 0.5em 0 10px 0.5em;
+}
+.homelink {
+  text-align: left;
   color: #cee2d9;
-  margin: 0.25em 0 0 0;
+  margin: 0.5em 0 0 0.5em;
   line-height: 1em;
-  margin-bottom: 10px;
   font-weight: lighter;
   font-size: 1.5em;
+  animation-name: slide-down;
+  animation-duration: 500ms;
+}
+.homelink-sub {
+  text-align: left;
+  color: #3a6351;
+  margin: 0 0 0 0.75em;
+  font-weight: lighter;
+  font-size: 1em;
+  animation-name: slide-down;
+  animation-duration: 500ms;
 }
 .h3-index {
   opacity: 0;
@@ -271,14 +316,46 @@ section img {
 }
 .contact-info {
   display: flex;
+  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  background-color: #3a6351;
+  height: 600px;
+  margin: 1.5em;
 }
-.contact-info p {
-  color: white;
+.email {
+  color: #3a6351;
   margin: 1em 0 1em 0;
-  text-align: left;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bolder;
+  text-decoration: underline;
+  animation-name: load-in;
+  animation-duration: 1s;
+}
+.main-projects {
+  padding: 0;
+  margin: 2em 0 0 0;
+  max-width: 100%;
+}
+.projectX {
+  margin: 0;
+}
+.project-img-slide {
+  height: 250px;
+  background-image: url(https://placekitten.com/300/300);
+  background-size: cover;
+}
+.project-title-fade {
+  background-color: #3a6351;
+  height: 50px;
+}
+.project-title {
+  margin: 0;
+}
+.project-description {
+  color: white;
+  margin: 0;
+  padding: 0.5em;
+  background-color: #3a6351;
 }
 div.footer {
   display: flex;
@@ -338,6 +415,12 @@ section.social-icons p a {
   nav div {
     width: 50%;
   }
+  .homelink {
+    font-size: 1.75em;
+  }
+  .homelink-sub {
+    font-size: 1.25em;
+  }
   .hero-banner {
     display: grid;
     grid-row-gap: 1.5em;
@@ -366,7 +449,7 @@ section.social-icons p a {
     font-size: 2em;
   }
   .project-img {
-    height: 425px;<h3><a href="index.html">Hugh Alun-Jones</a></h3>
+    height: 75%;
   }
   .about-img {
     height: 400px;
@@ -376,6 +459,9 @@ section.social-icons p a {
   }
   .about-description p {
     font-size: 1.5em;
+  }
+  .email {
+    font-size: 2em;
   }
 }
 
@@ -485,7 +571,9 @@ section.social-icons p a {
     padding: 2em;
   }
   .project-segment {
-    height: 600px;
+    height: 800px;
+    width: 75%;
+    align-self: center;
   }
   h3 {
     color: white;
@@ -493,7 +581,7 @@ section.social-icons p a {
     opacity: 1;
   }
   .project-img {
-    height: 525px;
+    height: 87%;
     transition: 0.4s;
   }
   .project-img:hover {
@@ -509,6 +597,9 @@ section.social-icons p a {
     width: 80%;
     align-self: center;
     margin: 0.5em;
+  }
+  .email {
+    font-size: 3.8em;
   }
 }
 @media screen and (min-width: 1400px) {
