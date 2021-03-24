@@ -139,7 +139,7 @@ nav a {
   text-decoration: none;
   justify-content: center;
   color: #3a6351;
-  font-size: 1.4em;
+  font-size: 1.75em;
   font-weight: bold;
   transition: color 0.4s;
 }
@@ -283,7 +283,7 @@ main p {
   background-image: url(https://placekitten.com/720/720);
   background-size: cover;
   margin: 1em;
-  height: 325px;
+  height: 85%;
 }
 section img {
   margin: 0;
@@ -337,29 +337,46 @@ section img {
 }
 .main-projects {
   padding: 0;
-  margin: 2em 0 0 0;
+  margin: 2em 0 3em 0;
   max-width: 100%;
 }
+
 .projectX {
   margin: 0;
+  height: 90%;
+  display: grid;
+  grid-template-rows: 8fr;
+  grid-template-columns: 1fr;
+}
+.projectX h3 {
+  font-size: 2em;
 }
 .project-img-slide {
-  height: 250px;
+  height: 375px;
+  grid-area: 1 / 1 / 4 / 2;
   background-image: url(https://placekitten.com/300/300);
   background-size: cover;
 }
 .project-title-fade {
   background-color: #3a6351;
-  height: 50px;
+  height: 75px;
+  grid-area: 3 / 1 / 4 / 2;
+  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
+  mask-image: linear-gradient(to top, black 0%, transparent 100%);
 }
 .project-title {
-  margin: 0;
+  margin: 0.25em 0 0 0;
+  grid-area: 3 / 1 / 4 / 2;
+  z-index: 2;
 }
 .project-description {
   color: white;
+  font-size: 1.25em;
   margin: 0;
   padding: 0.5em;
+  grid-area: 4 / 1 / 8 / 2;
   background-color: #3a6351;
+  height: 500px;
 }
 div.footer {
   display: flex;
@@ -451,9 +468,6 @@ section.social-icons p a {
   }
   h3 {
     font-size: 2em;
-  }
-  .project-img {
-    height: 75%;
   }
   .about-img {
     height: 400px;
@@ -604,6 +618,28 @@ section.social-icons p a {
   }
   .email {
     font-size: 3.8em;
+  }
+  .projectX {
+    margin: 0 2em 0 2em;
+    grid-template-rows: 4fr;
+    grid-template-columns: 6fr;
+  }
+  .project-img-slide {
+    grid-area: 1 / 3 / 4 / 6;
+    background-image: url(https://placekitten.com/750/750);
+    width: 750px;
+    height: 100%;
+  }
+  .project-title {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+  .project-title-fade {
+    grid-area: 1 / 1 / 2 / 3;
+    -webkit-mask-image: linear-gradient(to top, #3a6351 100%, #3a6351 100%);
+  }
+  .project-description {
+    grid-area: 2 / 1 / 4 / 3;
+    text-align: center;
   }
 }
 @media screen and (min-width: 1400px) {
