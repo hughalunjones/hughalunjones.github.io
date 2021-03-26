@@ -205,7 +205,7 @@ nav a:hover {
   height: 300px;
   max-height: 310px;
   max-width: 100%;
-  background: url(https://placekitten.com/500/500);
+  background: url(https://placekitten.com/720/720);
   background-repeat: no-repeat;
   background-size: cover;
   filter: grayscale(90%);
@@ -219,16 +219,6 @@ main p {
 .sous-img {
   margin-bottom: 1em;
   font-size: 20px;
-  color: #3a6351;
-}
-.quote {
-  margin: 1em;
-  width: 60%;
-  padding: 1em 0 1em 0;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  text-align: center;
-  line-height: normal;
   color: #3a6351;
 }
 .sous-quote {
@@ -309,14 +299,6 @@ section img {
   animation-name: slide-left;
   animation-duration: 2s;
 }
-.contact-img {
-  background-image: url(https://placekitten.com/500/500);
-  height: 300px;
-  width: 100%;
-  background-size: cover;
-  filter: grayscale(90%);
-  margin-bottom: 2em;
-}
 .contact-info {
   display: flex;
   justify-content: center;
@@ -339,7 +321,6 @@ section img {
   margin: 2em 0 3em 0;
   max-width: 100%;
 }
-
 .projectX {
   margin: 0;
   height: 90%;
@@ -353,7 +334,6 @@ section img {
 .project-img-slide {
   height: 375px;
   grid-area: 1 / 1 / 4 / 2;
-  background-image: url(https://placekitten.com/300/300);
   background-size: cover;
 }
 .project-title-fade {
@@ -386,13 +366,38 @@ section img {
 .arrows {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin: 0 3em 0 3em;
+  justify-content: space-around;
+  margin: 3em;
+  padding: 0 2em 0 2em;
 }
 .arrows p {
   color: #3a6351;
   font-size: 2em;
   margin: 1em 2em 1em 2em;
+}
+.l-top {
+  height: 3px;
+  width: 30px;
+  background: #3a6351;
+  transform: translateY(-0.5em) rotate(-45deg);
+}
+.l-bottom {
+  height: 3px;
+  width: 30px;
+  background: #3a6351;
+  transform: translateY(0.5em) rotate(45deg);
+}
+.r-top {
+  height: 3px;
+  width: 30px;
+  background: #3a6351;
+  transform: translateY(-0.5em) rotate(45deg);
+}
+.r-bottom {
+  height: 3px;
+  width: 30px;
+  background: #3a6351;
+  transform: translateY(0.5em) rotate(-45deg);
 }
 div.footer {
   display: flex;
@@ -443,12 +448,6 @@ section.social-icons p a {
   #menuToggler.open div:nth-child(2){
     transform: translateY(-0.25em) rotate(-180deg);
   }
-  header img {
-    background-image: url(https://placekitten.com/500/250);
-  }
-  nav a {
-    font-size: 1.75em;
-  }
   nav div {
     width: 50%;
   }
@@ -474,10 +473,6 @@ section.social-icons p a {
   }
   .sous-img {
     grid-area: 3 / 1 / 5 / 6;
-  }
-  p.quote {
-    font-size: 1.2em;
-    width: 60%;
   }
   .project-segment {
     height: 500px;
@@ -579,7 +574,7 @@ section.social-icons p a {
     margin: 1em 2em 1em 2em;
     max-height: 50vh;
     max-width: 50vw;
-    background: url(https://placekitten.com/500/500);
+    background: url(https://placekitten.com/720/720);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -646,7 +641,7 @@ section.social-icons p a {
   }
   .project-img-slide {
     grid-area: 1 / 2 / 4 / 12;
-    background-image: url(https://placekitten.com/750/750);
+    background-image: url(https://placekitten.com/720/720);
     width: 500px;
     height: 100%;
   }
@@ -695,7 +690,7 @@ section.social-icons p a {
   }
   .project-img-slide {
     grid-area: 1 / 3 / 4 / 12;
-    background-image: url(https://placekitten.com/750/750);
+    background-image: url(https://placekitten.com/720/720);
     width: 750px;
     height: 100%;
   }
