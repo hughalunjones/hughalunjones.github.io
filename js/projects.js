@@ -19,24 +19,34 @@ const projectData = [
   }
 ];
 
-let index = 0;
+function getQueryVariable(variable)
+{
+       let query = window.location.search.substring(1);
+       let vars = query.split("&");
+       for (let i=0;i<vars.length;i++) {
+               let pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+let projectIndex = getQueryVariable("id");
 
-document.getElementById('leftArrow').onclick = function decrementIndex() {
-  if(index == 0){
-    index = projectData.length - 1;
-    console.log("decrement at limit: " + index);
+document.getElementById('leftArrow').onclick = function decrementprojectIndex() {
+  if(projectIndex == 0){
+    projectIndex = projectData.length - 1;
+    console.log("decrement at limit: " + projectIndex);
   }else {
-    index -= 1;
-    console.log("decrement: " + index);
+    projectIndex -= 1;
+    console.log("decrement: " + projectIndex);
   }
 }
-document.getElementById('rightArrow').onclick = function incrementIndex() {
-  if(index == projectData.length - 1){
-    index = 0;
-    console.log("increment at limit: " + index);
+document.getElementById('rightArrow').onclick = function incrementprojectIndex() {
+  if(projectIndex == projectData.length - 1){
+    projectIndex = 0;
+    console.log("increment at limit: " + projectIndex);
   }else{
-    index += 1;
-    console.log("increment: " + index);
+    projectIndex += 1;
+    console.log("increment: " + projectIndex);
   }
 }
 
@@ -63,6 +73,6 @@ const buildProjectSection = projectData => {
   h3Title.setAttribute("class", "project-title");
   divDesc.setAttribute("class", "project-description");
 };
-console.log(projectData[index]);
+console.log(projectData[projectIndex]);
 
-buildProjectSection(projectData[index]);
+buildProjectSection(projectData[projectIndex]);
