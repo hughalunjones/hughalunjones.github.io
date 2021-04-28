@@ -1,21 +1,19 @@
 const projectData = [
   {
     id: 1,
-    image: "https://placekitten.com/720/720",
-    title: "Project One",
-    description: "Lorem one ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem one ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    image: "./images/museumGameImgOne.jpg",
+    alt: "An art gallery scene in a pixel art style",
+    title: "Museum Game",
+    descriptionOne: "Initially created as my final year university project the development of the as yet unnamed 'Museum Game' now continues in my spare time. The game allows the player to take on the role of a curator and fill a museum of their own with historical artefacts and exhibits. It is being developed using the Unity Engine and C#",
+    descriptionTwo: "The idea comes from a personal love for history, cultivated from growing up near an Edwardian castle and spending much of my youth playing Sid Meier's Civilization V. The project is created entirely by myself, art assets included."
   },
   {
     id: 2,
-    image: "https://placekitten.com/720/720",
-    title: "Project Two",
-    description: "Lorem two ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem one ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-  },
-  {
-    id: 3,
-    image: "https://placekitten.com/720/720",
-    title: "Project Three",
-    description: "Lorem three ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem one ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    image: "./images/webDesignProject.jpg",
+    alt: "A collection of Javascript, HTML and CSS code",
+    title: "Portfolio Website",
+    descriptionOne: "Almost a paradox, a website created to show off projects and work, with the website itself being one of those projects.",
+    descriptionTwo: "Created using Javascript, CSS3 and HTML5 using mobile first principles the webpage is responsive at any size. "
   }
 ];
 
@@ -23,7 +21,7 @@ function getQueryVariable(variable)
 {
        let query = window.location.search.substring(1);
        let vars = query.split("&");
-       for (let i=0;i<vars.length;i++) {
+       for (let i = 0;i < vars.length;i++) {
                let pair = vars[i].split("=");
                if(pair[0] == variable){return pair[1];}
        }
@@ -31,48 +29,33 @@ function getQueryVariable(variable)
 }
 let projectIndex = getQueryVariable("id");
 
-document.getElementById('leftArrow').onclick = function decrementprojectIndex() {
-  if(projectIndex == 0){
-    projectIndex = projectData.length - 1;
-    console.log("decrement at limit: " + projectIndex);
-  }else {
-    projectIndex -= 1;
-    console.log("decrement: " + projectIndex);
-  }
-}
-document.getElementById('rightArrow').onclick = function incrementprojectIndex() {
-  if(projectIndex == projectData.length - 1){
-    projectIndex = 0;
-    console.log("increment at limit: " + projectIndex);
-  }else{
-    projectIndex += 1;
-    console.log("increment: " + projectIndex);
-  }
-}
-
 const buildProjectSection = projectData => {
   const divImg = document.createElement("div");
   const divFade = document.createElement("div");
   const h3Title = document.createElement("h3");
   const divDesc = document.createElement("div");
-  const pDesc = document.createElement("p");
+  const pDescOne = document.createElement("p");
+  const pDescTwo = document.createElement("p");
 
-  divImg.style.backgroundImage = "url(https://placekitten.com/720/720)";
+  divImg.style.backgroundImage = "url(" + projectData.image + ")";
   h3Title.textContent = projectData.title;
-  pDesc.textContent = projectData.description;
+  pDescOne.textContent = projectData.descriptionOne;
+  pDescTwo.textContent = projectData.descriptionTwo;
 
   const divProject = document.querySelector(".projectX");
+
   divProject.append(divImg);
   divProject.append(divFade);
   divProject.append(h3Title);
   divProject.append(divDesc);
-  divDesc.append(pDesc);
+  divDesc.append(pDescOne);
+  divDesc.append(pDescTwo);
 
   divImg.setAttribute("class", "project-img-slide");
+  divImg.setAttribute("alt", projectData.alt);
   divFade.setAttribute("class", "project-title-fade");
   h3Title.setAttribute("class", "project-title");
   divDesc.setAttribute("class", "project-description");
 };
-console.log(projectData[projectIndex]);
 
 buildProjectSection(projectData[projectIndex]);

@@ -2,6 +2,7 @@ menuToggler.addEventListener('click', ev => {
   menuToggler.classList.toggle('open');
 });
 
+
 function fadeInPage() {
   if(!window.AnimationEvent){
     return;
