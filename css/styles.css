@@ -401,6 +401,7 @@ main p {
 }
 .project-description {
   padding: 0.5em;
+  overflow: scroll;
   grid-area: 4 / 1 / 8 / 2;
   background-color: #3a6351;
   height: 500px;
