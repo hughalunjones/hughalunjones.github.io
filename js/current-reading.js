@@ -1,6 +1,6 @@
 const bookData = [
   {
-    image: "./images/GameProgrammingPatternsBookCover.jpg",
+    image: "./images/gameProgrammingPatternsBookCover.jpg",
     title: "Game Programming Patterns",
     author: "Robert Nystrom"
   },
@@ -10,7 +10,7 @@ const bookData = [
     author: "Frank Herbert"
   },
   {
-    image: "./images/YouDontKnowJSYetBookCover.jpg",
+    image: "./images/youDontKnowJSYetBookCover.jpg",
     title: "You Don't Know JS Yet",
     author: "Kyle Simpson"
   }
