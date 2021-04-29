@@ -13,7 +13,7 @@ const projectData = [
     alt: "A collection of Javascript, HTML and CSS code",
     title: "Portfolio Website",
     descriptionOne: "Almost a paradox, a website created to show off projects and work, with the website itself being one of those projects.",
-    descriptionTwo: "Created using Javascript, CSS3 and HTML5 using mobile first principles the webpage is responsive at any size. "
+    descriptionTwo: "Created using Javascript, CSS3 and HTML5 using mobile first principles the webpage is responsive at any size."
   }
 ];
 

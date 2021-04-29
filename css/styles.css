@@ -171,7 +171,7 @@ main {
 }
 h1 {
   color: #3a6351;
-  font-size: 3.25em;
+  font-size: 2.85em;
   font-weight: bolder;
   letter-spacing: 1px;
   margin: 0;
@@ -199,16 +199,17 @@ a {
 nav a:hover {
   color: #393232;
 }
+.hero-banner{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .img-banner {
   margin: 1em 0 1em 0;
-  padding: 1em 0 1em 0;
   height: 300px;
+  object-fit: cover;
   max-height: 310px;
   max-width: 100%;
-  background: url(https://placekitten.com/720/720);
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: grayscale(90%);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 main p {
@@ -216,12 +217,12 @@ main p {
   font-size: 1em;
   color: #3a6351;
 }
-.sous-img {
+.under-img {
   margin-bottom: 1em;
   font-size: 20px;
   color: #3a6351;
 }
-.sous-quote {
+.under-quote {
   text-align: center;
   margin: 0;
 }
@@ -281,10 +282,6 @@ main p {
 .project-img.two {
   background-image: url("../images/webDesignProject.jpg");
   image-rendering: unset;
-}
-section img {
-  margin: 0;
-  filter: grayscale(90%);
 }
 .about-img {
   background-image: url("../images/meCropped.jpg");
@@ -430,29 +427,23 @@ section img {
   height: 25px;
   border-radius: 50%;
 }
-div.footer {
-  display: flex;
-  justify-content: center;
-  padding-top: 2em;
-}
 footer {
-  align-self: center;
-  width: 75%;
-  bottom: 0;
-  height: 50px;
   display: flex;
   justify-content: center;
-  background-color: #3a6351;
 }
 footer p {
   margin: 0.5em;
 }
 section.social-icons {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
   font-size: 2.5em;
   margin: 0.5em;
+  background-color: #3a6351;
+  width: 75%;
+  bottom: 0;
+  height: 50px;
 }
 section.social-icons p {
   margin: 0.25em 0.5em 0.25em 0.5em;
@@ -478,13 +469,16 @@ section.social-icons p a {
     width: 2em;
   }
   #menuToggler div {
-    height: 15;
+    height: 15%;
   }
   #menuToggler.open div:nth-child(1){
     transform: translateY(0.365em) rotate(180deg);
   }
   #menuToggler.open div:nth-child(2){
     transform: translateY(-0.365em) rotate(-180deg);
+  }
+  h1 {
+    font-size: 3.25em;
   }
   nav div {
     width: 50%;
@@ -509,7 +503,7 @@ section.social-icons p a {
     max-width: 50vw;
     grid-area: 1 / 4 / 3 / 6;
   }
-  .sous-img {
+  .under-img {
     grid-area: 3 / 1 / 5 / 6;
   }
   .project-segment {
@@ -568,9 +562,6 @@ section.social-icons p a {
   .hero-banner {
     margin: 40px 80px 40px 80px;
   }
-  .title {
-    margin: 0.5em 0.5em 0 0.5em;
-  }
   .sub-title {
     margin: 0 0.5em 0.5em 0.5em;
   }
@@ -605,7 +596,7 @@ section.social-icons p a {
     max-width: 50vw;
     grid-area: 1 / 4 / 5 / 6;
   }
-  .sous-img {
+  .under-img {
     grid-area: 3 / 1 / 5 / 4;
   }
   .img-banner {
@@ -615,10 +606,6 @@ section.social-icons p a {
     margin: 1em 2em 1em 2em;
     max-height: 50vh;
     max-width: 50vw;
-    background: url(https://placekitten.com/720/720);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
   }
   section.img-p {
     align-self: center;
@@ -641,8 +628,8 @@ section.social-icons p a {
     padding: 2em;
   }
   .project-segment {
-    height: 800px;
-    width: 75%;
+    height: 650px;
+    width: 95%;
     align-self: center;
   }
   h3 {
@@ -747,14 +734,17 @@ section.social-icons p a {
     margin-bottom: 2em;
   }
   h1 {
-    font-size: 6em;
+    font-size: 5em;
   }
   h2 {
     font-size: 3em;
   }
-  .sous-quote {
-    font-size: 1.75em;
-    text-align: left;
+  .under-quote {
+    font-size: 1.5em;
+  }
+  .project-segment {
+    height: 750px;
+    width: 80%;
   }
   .about-img {
     height: 600px;

@@ -1,17 +1,11 @@
-# CTEC3905 Assignment
+# CTEC3905 Assignment - Hugh Alun-Jones
 
-This repository contains basic boilerplate code for you to get started with.
+## References
 
-You will need to replace the contents of these files with your own code.
+SVG page fader adapted from [christopheraue.net](https://christopheraue.net/design/fading-pages-on-load-and-unload)
 
-## index.html
+Project page faded div styling adapted from [W3 Schools](https://www.w3schools.com/css/css3_gradients.asp)
 
-The `index.html` file includes a basic template with a link to the `css/styles.css` file and a script tag after the main content which links to the `js/scripts.js` file.
+Image shadow styling adapted from [W3 Schools](https://www.w3schools.com/css/css3_shadows.asp)
 
-## css/styles.css
-
-The `css/styles.css` file contains a basic starting template for a responsive page.
-
-## js/scripts.js
-
-The `js/scripts.js` file contains a simple console.log statement to confirm that it is being executed.
+Contact page mailto adapted from [CSS-Tricks](https://css-tricks.com/snippets/html/mailto-links/)

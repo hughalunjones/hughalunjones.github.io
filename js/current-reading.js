@@ -5,14 +5,14 @@ const bookData = [
     author: "Robert Nystrom"
   },
   {
+    image: "./images/duneBookCover.jpg",
+    title: "Dune",
+    author: "Frank Herbert"
+  },
+  {
     image: "./images/YouDontKnowJSYetBookCover.jpg",
     title: "You Don't Know JS Yet",
     author: "Kyle Simpson"
-  },
-  {
-    image: "https://placekitten.com/720/720",
-    title: "book three",
-    author: "author three"
   }
 ];
 
@@ -39,3 +39,4 @@ const buildReadingSection = bookData => {
 }
 buildReadingSection(bookData[0]);
 buildReadingSection(bookData[1]);
+buildReadingSection(bookData[2]);
