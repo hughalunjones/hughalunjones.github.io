@@ -18,9 +18,9 @@ const projectData = [
   {
     id: 3,
     image: "./images/agileTeamDevelopment.jpg",
-    alt: "",
+    alt: "An image of the Folio landing page",
     title: "Agile Team Development",
-    descriptionOne: "Completed in my second year at university this project was the creation of a mock e-commerce website, front and back-end. This project was my first exposure to working on a piece of software in a team environment.",
+    descriptionOne: "Completed in my second year at university this project was the creation of a mock e-commerce website, front and back-end. This project was my first exposure to working on a piece of software in a team environment. Our e-commerce site was a book selling site named Folio",
     descriptionTwo: "Agile methodologies were employed and the team met each week for sprint and GitHub was utilised for version control. I found this project particularly enjoyable and the collaboration on a project with others was a great experience."
   }
 ];
