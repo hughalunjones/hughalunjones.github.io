@@ -283,6 +283,9 @@ main p {
   background-image: url("../images/webDesignProject.jpg");
   image-rendering: unset;
 }
+.project-img.three {
+  background-image: url("../images/agileTeamDevelopment.jpg");
+}
 .about-img {
   background-image: url("../images/meCropped.jpg");
   background-size: cover;
