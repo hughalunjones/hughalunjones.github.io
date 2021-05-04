@@ -14,6 +14,14 @@ const projectData = [
     title: "Portfolio Website",
     descriptionOne: "Almost a paradox, a website created to show off projects and work, with the website itself being one of those projects.",
     descriptionTwo: "Created using Javascript, CSS3 and HTML5 using mobile first principles the webpage is responsive at any size."
+  },
+  {
+    id: 3,
+    image: "./images/agileTeamDevelopment.jpg",
+    alt: "",
+    title: "Agile Team Development",
+    descriptionOne: "Completed in my second year at university this project was the creation of a mock e-commerce website, front and back-end. This project was my first exposure to working on a piece of software in a team environment.",
+    descriptionTwo: "Agile methodologies were employed and the team met each week for sprint and GitHub was utilised for version control. I found this project particularly enjoyable and the collaboration on a project with others was a great experience."
   }
 ];
 
