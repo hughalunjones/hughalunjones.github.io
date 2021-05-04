@@ -674,6 +674,7 @@ section.social-icons p a {
   }
   p.about {
     margin: 1.5em 0 1.5em 0;
+    font-size: 1.1em;
   }
   .currently-reading {
     margin-top: 2em;
@@ -752,6 +753,9 @@ section.social-icons p a {
   .about-img {
     height: 600px;
   }
+  p.about {
+   font-size: 1.5em; 
+  }    
   .currently-reading {
     margin-top: 3em;
   }
